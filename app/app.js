@@ -8,7 +8,7 @@ app.config(['$routeProvider', function ($routeProvider) {
                 .when('/faculdade/:faculdadeId', {
                     templateUrl: 'views/faculdade/single.html',
                     controller: 'FaculdadeController'
-                })                
+                })
                 .otherwise({
                     redirectTo: '/'
                 });
@@ -21,9 +21,34 @@ app.controller('MainController', function ($scope, $route, $routeParams, $locati
     $scope.$routeParams = $routeParams;
 });
 
-app.controller('FaculdadeController', function ($scope, $routeParams) {
 
-});
+
+
+app.controller('FaculdadeController', function ($scope, $http, $routeParams) {
+    
+    var teste = this;    
+    
+        
+        this.lista = [];
+        
+        $(document).ready(function(){
+            $http.get('api/faculdades.json').
+                success(function (data) {
+                    
+                        teste.lista = data;  
+                   
+                                      
+                }).
+                error(function () {
+                    
+                        teste.lista = [];  
+                    
+                    
+                });
+        });
+        
+
+    });
 
 app.controller('AtividadeController', function ($scope, $routeParams) {
 

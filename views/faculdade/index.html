@@ -1,1 +1,26 @@
-<h1>Lista<h1>
+<div class="container-fluid" ng-controller="FaculdadeController as faculdade">
+    <h1>Listagem<h1>
+            <div class="row">
+                <section class="col col-xs-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="faculdade in faculdade.lista">
+                                <td>{{faculdade.nome}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-default"><i class="glyphicon glyphicon-edit"></i> Editar</button>
+                                        <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Excluir</button>
+                                    </div>
+                                </td>
+                            </tr>                        
+                        </tbody>
+                    </table>
+                </section>
+            </div>   
+            </div>
