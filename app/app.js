@@ -6,7 +6,7 @@ app.config(['$routeProvider', function ($routeProvider) {
                     controller: 'FaculdadeController'
                 })
                 .when('/faculdade/:faculdadeId', {
-                    templateUrl: 'views/faculdade/single.html',
+                    templateUrl: 'views/faculdade/form.html',
                     controller: 'FaculdadeController'
                 })
                 .otherwise({
@@ -25,33 +25,35 @@ app.controller('MainController', function ($scope, $route, $routeParams, $locati
 
 
 app.controller('FaculdadeController', function ($scope, $http, $routeParams) {
-    
-    var teste = this;    
-    
-        
-        this.lista = [];
-        
-        $(document).ready(function(){
-            $http.get('api/faculdades.json').
-                success(function (data) {
-                    
-                        teste.lista = data;  
-                   
-                                      
-                }).
-                error(function () {
-                    
-                        teste.lista = [];  
-                    
-                    
-                });
-        });
-        
 
-    });
+    var faculdade = this;
+    this.lista = [];
+
+    $http.get('api/faculdades.json').
+            success(function (data) {
+                faculdade.lista = data;
+            }).
+            error(function () {
+                faculdade.lista = [];
+            });
+});
+
+
+
 
 app.controller('AtividadeController', function ($scope, $routeParams) {
+    
+    var atividades = this;
+    this.lista = [];
 
+    $http.get('api/atividades.json').
+            success(function (data) {
+                atividades.lista = data;
+            }).
+            error(function () {
+                atividades.lista = [];
+            });
+            
 });
 
 app.controller('MaterialController', function ($scope, $routeParams) {

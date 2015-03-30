@@ -1,3 +1,8 @@
-{
-    "name": "Dola"
-}
+[
+    {
+        "name": "Projeto I",
+        "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
+        "disciplina":"Programação Web"
+        
+    }
+]
