@@ -1,132 +1,103 @@
 <!DOCTYPE html>
-<html lang="en-us" class="no-js">
-	<head>
-	
-		<meta charset="utf-8">
-		<title> SmartAdmin (AngularJS)</title>
-		<meta name="description" content="">
-		<meta name="author" content="">
+<html lang="en" ng-app="acad">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-		<!-- #CSS Links -->
-		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/font-awesome.min.css">
+        <title>Simple Sidebar - Start Bootstrap Template</title>
 
-		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-production-plugins.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-skins.min.css">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- SmartAdmin AngularJS Fixes -->
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/fixes.css">
+        <!-- Custom CSS -->
+        <link href="css/simple-sidebar.css" rel="stylesheet">
 
-		<!-- SmartAdmin RTL Support (Not using RTL? Disable the CSS below to save bandwidth) -->
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/smartadmin-rtl.min.css">
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="app/app.js"></script>
 
-		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+        <script type="text/javascript">
+            angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+        </script>
+    </head>
 
-		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="styles/css/demo.min.css">
+    <body ng-controller="MainController">
 
-		<!-- #FAVICONS -->
-		<link rel="shortcut icon" href="styles/img/favicon/favicon.ico" type="image/x-icon">
+        <div id="wrapper">
 
-		<!-- #GOOGLE FONT -->
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            AcadCoop
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/home">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#/faculdade/2">Faculdade</a>
+                    </li>
+                    <li>
+                        <a href="#/disciplinas">Disciplinas</a>
+                    </li>
+                    <li>
+                        <a href="#/material">Materiais</a>
+                    </li> 
+                    <li>
+                        <pre>$location.path() = {{$location.path()}}</pre>
+                        <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+                        <pre>$route.current.params = {{$route.current.params}}</pre>
+                        <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+                        <pre>$routeParams = {{$routeParams}}</pre>
+                    </li>
+                </ul>
 
-		<!-- #APP SCREEN / ICONS -->
-		<!-- Specifying a Webpage Icon for Web Clip
-		Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="styles/img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="styles/img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="styles/img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="styles/img/splash/touch-icon-ipad-retina.png">
+            </div>
+            <!-- /#sidebar-wrapper -->
 
-		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <!-- Page Content -->
+            <div id="page-content-wrapper" ng-view>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Simple Sidebar</h1>
+                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
 
-		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="styles/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="styles/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="styles/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+        </div>
+        <!-- /#wrapper -->
 
-	</head>
-	<!--
 
-	TABLE OF CONTENTS.
 
-	Use search to find needed section.
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-	===================================================================
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-	|  01. #CSS Links                |  all CSS links and file paths  |
-	|  02. #FAVICONS                 |  Favicon links and file paths  |
-	|  03. #GOOGLE FONT              |  Google font link              |
-	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
-	|  05. #BODY                     |  body tag                      |
-	|  06. #HEADER                   |  header tag                    |
+        <!-- Menu Toggle Script -->
+        <script>
+              $("#menu-toggle").click(function (e) {
+                  e.preventDefault();
+                  $("#wrapper").toggleClass("toggled");
+              });
+        </script>
 
-	===================================================================
+    </body>
 
-	-->
-
-	<!-- #BODY -->
-	<!-- Possible Classes (to hardcode the classes you must disable the __ module)
-
-	* 'smart-style-{SKIN#}'
-	* 'smart-rtl'         - Switch theme mode to RTL
-	* 'menu-on-top'       - Switch to top navigation (no DOM change required)
-	* 'no-menu'           - Hides the menu completely
-	* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
-	* 'fixed-header'      - Fixes the header
-	* 'fixed-navigation'  - Fixes the main menu
-	* 'fixed-ribbon'      - Fixes breadcrumb
-	* 'fixed-page-footer' - Fixes footer
-	* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
-
-	Possible attributes
-
-	* 'data-smart-device-detect' - Detects if mobile or desktop, adds a class to body tag
-	* 'data-smart-fast-click'    - Mobile click events
-	* 'data-smart-layout'        - Mobile view event listener
-	* 'data-smart-page-title'    - Page title
-
-	-->
-
-	<body data-smart-device-detect
-		data-smart-fast-click
-		data-smart-layout
-		data-smart-page-title="SmartAdmin AngularJS">
-
-		<!-- ui-view container -->
-
-		<div data-ui-view="root"  data-autoscroll="false"></div>
-
-		<!--[if lt IE 7]>
-			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
-
-		<!--[if lt IE 9]>
-			<script src="plugin/es5-shim/es5-shim.js"></script>
-			<script src="plugin/json3/lib/json3.min.js"></script>
-		<![endif]-->
-
-		<!-- Use for production after building the project with grunt --> 
-		<script src="build/rconfig.js"></script>
-		<script src="plugin/requirejs/require.js" data-main="build/main.js"></script>		
-
-		<!-- Use for development -->		
-		<!--
-		<script src="app/rconfig.js"></script>
-		<script src="plugin/requirejs/require.js" data-main="app/main.js"></script>-->
-		
-		
-
-	</body>
-	
 </html>
