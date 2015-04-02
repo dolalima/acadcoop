@@ -5,9 +5,9 @@ app.config(['$routeProvider', function ($routeProvider) {
                     templateUrl: 'views/faculdade/index.html',
                     controller: 'FaculdadeController'
                 })
-                .when('/faculdade/:faculdadeId', {
+                .when('/faculdade/cadastro/:faculdadeId', {
                     templateUrl: 'views/faculdade/form.html',
-                    controller: 'FaculdadeController'
+                    controller: 'FaculdadeCadastroController'
                 })
                 .otherwise({
                     redirectTo: '/'
@@ -35,6 +35,20 @@ app.controller('FaculdadeController', function ($scope, $http, $routeParams) {
             }).
             error(function () {
                 faculdade.lista = [];
+            });
+});
+
+app.controller('FaculdadeCadastroController', function ($scope, $http, $routeParams) {
+
+    var cadastro = this;
+    this.estados = [];
+
+    $http.get('api/estados.json').
+            success(function (data) {
+                cadastro.estados = data;
+            }).
+            error(function () {
+                cadastro.estados = [];
             });
 });
 

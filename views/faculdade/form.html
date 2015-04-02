@@ -1,17 +1,76 @@
-<div class="container-fluid" ng-controller="FaculdadeController as faculdade">
+<div class="container-fluid" ng-controller="FaculdadeCadastroController as cadastro">
     <div class="row">
         <section class="col col-xs-12">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading"><i class="glyphicon glyphicon-education"></i> Editar Faculdades</div>
                 <div class="panel-body">
-                    <form class="smart">
+                    <form class="smart-form">
                         <fieldset>
                             <div class="row">
                                 <section class="col col-xs-12">
                                     <label class="label">Nome:</label>
-                                    <label class="input-sm">
-                                        <input type="text" ng-model="e.nome">
+                                    <label class="input">
+                                        <input type="text" ng-model="entidade.nome">
+                                    </label>                                           
+                                </section>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="row">
+                                <section class="col col-xs-10">
+                                    <label class="label">Logradouro:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="entidade.endereco.logradouro">
+                                    </label>                                           
+                                </section>
+                                <section class="col col-xs-2">
+                                    <label class="label">Numero:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="entidade.endereco.numero">
+                                    </label>                                           
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-xs-6">
+                                    <label class="label">Bairro:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="entidade.endereco.bairro">
+                                    </label>                                           
+                                </section>
+                                <section class="col col-xs-6">
+                                    <label class="label">Estado:</label>
+                                    <label class="select">
+                                        <select ng-model="entidade.endereco.estado">
+                                            <option value="">Selecioine...</option>
+                                            <option ng-repeat="estado in cadastro.estados" ng-value="estado">{{estado.Nome}}</option>
+                                        </select>
+                                        <i></i>
+                                    </label>                                           
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-xs-6">
+                                    <label class="label">Complemento:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="entidade.endereco.complemento">
+                                    </label>                                           
+                                </section>
+                                <section class="col col-xs-6">
+                                    <label class="label">Cidade:</label>
+                                    <label class="select">
+                                        <select ng-model="entidade.endereco.estado">
+                                            <option value="">Selecioine...</option>
+                                        </select>
+                                        <i></i>
+                                    </label>                                           
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-xs-6">
+                                    <label class="label">CEP:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="entidade.endereco.cep">
                                     </label>                                           
                                 </section>
                             </div>
