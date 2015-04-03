@@ -1,3 +1,20 @@
-{
-    "name": "Dola"
-}
+[
+    {
+        "id":1,
+        "nome": "Projeto I",        
+        "professor": "Gustavo Lins",
+        "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
+        "disciplina":"Programação Web",
+        "dataEntrega" : "2015-04-15"
+        
+    },
+    {
+        "id":2,
+        "nome": "Projeto II",        
+        "professor": "Gustavo Lins",
+        "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
+        "disciplina":"Programação Web",
+        "dataEntrega" : "2015-04-15"
+        
+    }
+]

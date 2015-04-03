@@ -9,9 +9,20 @@
                         <fieldset>
                             <div class="row">
                                 <section class="col col-xs-12">
+                                    <label class="label"></label>
+                                    <label class="radio">
+                                        
+                                            <input type="radio" name="tipoFaculdade" value="particular"><i></i>Particular
+                                            <input type="radio" name="tipoFaculdade" value="publica"><i></i>Publica
+                                        
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-xs-12">
                                     <label class="label">Nome:</label>
                                     <label class="input">
-                                        <input type="text" ng-model="entidade.nome">
+                                        <input type="text" ng-model="cadastro.entidade.nome">
                                     </label>                                           
                                 </section>
                             </div>

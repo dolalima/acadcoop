@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="container-fluid" ng-controller="AtividadeController as atividade">
+
+    <div class="row">
+        <section class="col col-xs-12">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Atividades <a class="btn btn-primary btn-xs" href="#/atividade/cadastro/new" style="float:right">
+                        <i class="glyphicon glyphicon-plus"></i> Adicionar
+                    </a></div>
+                <div class="panel-body" style="padding: 0px">
+                    <div class="row">
+                        <div class="atividade col col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="atividade in atividade.lista">
+                            <div class="header">
+                                <div class="date">
+                                    <span class="day">15</span>
+                                    <span class="month">Maio</span>
+                                </div><div class="title">{{atividade.nome}}</div></div>  
+                            <div class="body">
+                                <p>
+                                    <strong>Disciplina:</strong> {{atividade.disciplina}}<br>
+                                    <strong>Professor:</strong> {{atividade.professor}}
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>   
+</div>

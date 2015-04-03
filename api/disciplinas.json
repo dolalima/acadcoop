@@ -1,8 +1,11 @@
 [
     {
-        "name": "Projeto I",
+        "id":1,
+        "name": "Projeto I",        
+        "professor": "Gustavo Lins",
         "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
-        "disciplina":"Programação Web"
+        "disciplina":"Programação Web",
+        "dataEntrega" : "2015-04-15"
         
     }
 ]
