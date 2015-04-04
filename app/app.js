@@ -28,7 +28,7 @@ app.config(['$routeProvider', function ($routeProvider) {
                 .when('/disciplina', {
                     templateUrl: 'views/disciplina/index.html'
                 })
-                .when('/disciplina/cadastro', {
+                .when('/disciplina/cadastro/:disciplinaId', {
                     templateUrl: 'views/disciplina/form.html'
                 })
                 .otherwise({
@@ -99,7 +99,8 @@ app.controller('FaculdadeCadastroController', function ($scope, $filter, $http, 
 app.controller('AtividadeController', function ($scope, $http, $routeParams) {
 
     var atividade = this;
-    this.lista = [];
+    this.lista = [];    
+    
 
     $http.get('api/atividades.json').
             success(function (data) {
@@ -145,6 +146,21 @@ app.controller('DisciplinaController', function ($scope, $http, $routeParams) {
             }).
             error(function () {
                 disciplina.lista = [];
+            });
+
+});
+
+app.controller('DisciplinaCadastroController', function ($scope, $http,$filter, $routeParams) {
+
+    var cadastro = this;
+    this.entidade = {};
+
+    $http.get('api/disciplinas.json').
+            success(function (data) {
+                cadastro.entidade = $filter('getById')(data, $routeParams.disciplinaId);                
+            }).
+            error(function () {
+                cadastro.entidade = {};
             });
 
 });

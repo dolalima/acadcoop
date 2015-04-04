@@ -1,23 +1,12 @@
-<div class="container-fluid" ng-controller="FaculdadeCadastroController as cadastro">
+<div class="container-fluid" ng-controller="DisciplinaCadastroController as cadastro">
     <div class="row">
         <section class="col col-xs-12">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><i class="glyphicon glyphicon-education"></i> Editar Faculdades</div>
-                <div class="panel-body">
+                <div class="panel-heading"><i class="glyphicon glyphicon-education"></i> Editar Disciplina</div>
+                <div class="panel-body no-padding">
                     <form class="smart-form">
-                        <fieldset>
-                            <div class="row">
-                                <section class="col col-xs-12">
-                                    <label class="label"></label>
-                                    <label class="radio">
-                                        
-                                            <input type="radio" name="tipoFaculdade" value="particular"><i></i>Particular
-                                            <input type="radio" name="tipoFaculdade" value="publica"><i></i>Publica
-                                        
-                                    </label>
-                                </section>
-                            </div>
+                        <fieldset>                            
                             <div class="row">
                                 <section class="col col-xs-12">
                                     <label class="label">Nome:</label>
@@ -26,67 +15,18 @@
                                     </label>                                           
                                 </section>
                             </div>
-                        </fieldset>
-                        <fieldset>
                             <div class="row">
-                                <section class="col col-xs-10">
-                                    <label class="label">Logradouro:</label>
+                                <section class="col col-xs-12">
+                                    <label class="label">Professor:</label>
                                     <label class="input">
-                                        <input type="text" ng-model="cadastro.entidade.endereco.logradouro">
-                                    </label>                                           
-                                </section>
-                                <section class="col col-xs-2">
-                                    <label class="label">Numero:</label>
-                                    <label class="input">
-                                        <input type="text" ng-model="cadastro.entidade.endereco.numero">
-                                    </label>                                           
-                                </section>
-                            </div>
-                            <div class="row">
-                                <section class="col col-xs-6">
-                                    <label class="label">Bairro:</label>
-                                    <label class="input">
-                                        <input type="text" ng-model="cadastro.entidade.endereco.bairro">
-                                    </label>                                           
-                                </section>
-                                <section class="col col-xs-6">
-                                    <label class="label">Estado:</label>
-                                    <label class="select">
-                                        <select ng-model="cadastro.entidade.endereco.estado">
-                                            <option value="0">Selecioine...</option>
-                                            <option ng-repeat="estado in cadastro.estados" ng-value="{{estado.ID}}">{{estado.Nome}}</option>
-                                        </select>
-                                        <i></i>
-                                    </label>                                           
-                                </section>
-                            </div>
-                            <div class="row">
-                                <section class="col col-xs-6">
-                                    <label class="label">Complemento:</label>
-                                    <label class="input">
-                                        <input type="text" ng-model="cadastro.entidade.endereco.complemento">
-                                    </label>                                           
-                                </section>
-                                <section class="col col-xs-6">
-                                    <label class="label">Cidade:</label>
-                                    <label class="select">
-                                        <select ng-model="cadastro.entidade.endereco.cidade">
-                                            <option value="">Selecioine...</option>
-                                            <option value="" ng-repeat="cidade in cadastro.cidades | filter:{Estado:cadastro.entidade.endereco.estado}">{{cidade.Nome}}</option>
-                                        </select>
-                                        <i></i>
-                                    </label>                                           
-                                </section>
-                            </div>
-                            <div class="row">
-                                <section class="col col-xs-6">
-                                    <label class="label">CEP:</label>
-                                    <label class="input">
-                                        <input type="text" ng-model="cadastro.entidade.endereco.cep">
+                                        <input type="text" ng-model="cadastro.entidade.professor">
                                     </label>                                           
                                 </section>
                             </div>
                         </fieldset>
+                        <footer>
+                            <button class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Salvar</button>
+                        </footer>
                     </form>
                 </div>
             </div>
