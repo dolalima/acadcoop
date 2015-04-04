@@ -1,0 +1,52 @@
+<div class="container-fluid" ng-controller="AtividadeCadastroController as cadastro">
+    <div class="row">
+        <section class="col col-xs-12">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><i class="glyphicon glyphicon-education"></i> Editar Atividades</div>
+                <div class="panel-body no-padding">
+                    <form class="smart-form">
+                        <fieldset>                            
+                            <div class="row">
+                                <section class="col col-xs-8">
+                                    <label class="label">Nome:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="cadastro.entidade.nome">
+                                    </label>                                           
+                                </section>
+                                <section class="col col-xs-4">
+                                    <label class="label">Data Entrega:</label>
+                                    <label class="input">
+                                        <input type="date" ng-model="cadastro.entidade.dateEntrega">
+                                    </label>                                           
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-xs-12">
+                                    <label class="label">Descrição:</label>
+                                    <label class="select">
+                                        <select name="" >
+                                            <option ng-repeat="disciplina in cadastro.disciplinas">{{disciplina.nome}}</option> 
+                                        </select>
+                                        <i></i>
+                                    </label>                                           
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-xs-12">
+                                    <label class="label">Descrição:</label>
+                                    <label class="input">
+                                        <input type="text" ng-model="cadastro.entidade.descricao">
+                                    </label>                                           
+                                </section>
+                            </div>
+                        </fieldset>  
+                        <footer>
+                            <button class="btn btn-primary"><i class="glyphicon glyphicon-floppy-save"></i> Salvar</button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

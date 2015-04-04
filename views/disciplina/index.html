@@ -1,10 +1,10 @@
-<div class="container-fluid" ng-controller="FaculdadeController as faculdade">
+<div class="container-fluid" ng-controller="DisciplinaController as disciplina">
 
     <div class="row">
         <section class="col col-xs-12">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Faculdades <a class="btn btn-primary btn-xs" href="#/faculdade/cadastro/new" style="float:right">
+                <div class="panel-heading">Disciplinas <a class="btn btn-primary btn-xs" href="#/disciplina/cadastro/new" style="float:right">
                         <i class="glyphicon glyphicon-plus"></i> Adicionar
                     </a></div>
                 <div class="panel-body" style="padding: 0px">
@@ -12,15 +12,17 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
+                                <th>Professor</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="faculdade in faculdade.lista">
-                                <td>{{faculdade.nome}}</td>
+                            <tr ng-repeat="disciplina in disciplina.lista">
+                                <td>{{disciplina.nome}}</td>
+                                <td>{{disciplina.professor}}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="#/faculdade/cadastro/{{faculdade.id}}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                                        <button class="btn btn-default"><i class="glyphicon glyphicon-edit"></i> Editar</button>
                                         <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Excluir</button>
                                     </div>
                                 </td>

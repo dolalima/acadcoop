@@ -1,15 +1,15 @@
 var app = angular.module('acad', ['ngRoute']);
 
-app.filter('getById', function() {
-  return function(input, id) {
-    var i=0, len=input.length;
-    for (; i<len; i++) {
-      if (+input[i].id == +id) {
-        return input[i];
-      }
+app.filter('getById', function () {
+    return function (input, id) {
+        var i = 0, len = input.length;
+        for (; i < len; i++) {
+            if (+input[i].id == +id) {
+                return input[i];
+            }
+        }
+        return null;
     }
-    return null;
-  }
 });
 app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -22,8 +22,14 @@ app.config(['$routeProvider', function ($routeProvider) {
                 .when('/atividade', {
                     templateUrl: 'views/atividade/index.html'
                 })
-                .when('/atividade/cadastro', {
+                .when('/atividade/cadastro/:atividadeId', {
                     templateUrl: 'views/atividade/form.html'
+                })
+                .when('/disciplina', {
+                    templateUrl: 'views/disciplina/index.html'
+                })
+                .when('/disciplina/cadastro', {
+                    templateUrl: 'views/disciplina/form.html'
                 })
                 .otherwise({
                     redirectTo: '/'
@@ -54,27 +60,25 @@ app.controller('FaculdadeController', function ($scope, $http, $routeParams) {
             });
 });
 
-app.controller('FaculdadeCadastroController', function ($scope,$filter, $http, $routeParams) {
+app.controller('FaculdadeCadastroController', function ($scope, $filter, $http, $routeParams) {
 
     var cadastro = this;
     this.entidade = {};
     this.estados = [];
     this.cidades = [];
-    
-    this.getCidades = function(estadoId){
-        $http.get('api/cidades.json',{Estado:estadoId}).
+
+    $http.get('api/cidades.json').
             success(function (data) {
-                cadastro.estados = data;
+                cadastro.cidades = data;
             }).
             error(function () {
-                cadastro.estados = [];
+                cadastro.cidades = [];
             });
-    };
-    
-    $http.get('api/faculdades.json',{id:$routeParams.faculdadeId}).
+
+
+    $http.get('api/faculdades.json', {id: $routeParams.faculdadeId}).
             success(function (data) {
-                cadastro.entidade = $filter('getById')(data, $routeParams.faculdadeId);
-                console.debug(cadastro.entidade);
+                cadastro.entidade = $filter('getById')(data, $routeParams.faculdadeId);                
             }).
             error(function () {
                 cadastro.entidade = {};
@@ -92,8 +96,8 @@ app.controller('FaculdadeCadastroController', function ($scope,$filter, $http, $
 
 
 
-app.controller('AtividadeController', function ($scope,$http,$routeParams) {
-    
+app.controller('AtividadeController', function ($scope, $http, $routeParams) {
+
     var atividade = this;
     this.lista = [];
 
@@ -104,7 +108,45 @@ app.controller('AtividadeController', function ($scope,$http,$routeParams) {
             error(function () {
                 atividade.lista = [];
             });
-            
+
+});
+
+app.controller('AtividadeCadastroController', function ($scope, $filter, $http, $routeParams) {
+
+    var cadastro = this;
+    this.entidade = {};
+    this.disciplinas = [];
+    
+    $http.get('api/disciplinas.json').
+            success(function (data) {
+                cadastro.disciplinas = data;
+            }).
+            error(function () {
+                cadastro.disciplinas = [];
+            });
+
+    $http.get('api/atividades.json').
+            success(function (data) {
+                cadastro.entidade = $filter('getById')(data, $routeParams.atividadeId);                
+            }).
+            error(function () {
+                cadastro.entidade = {};
+            });    
+});
+
+app.controller('DisciplinaController', function ($scope, $http, $routeParams) {
+
+    var disciplina = this;
+    this.lista = [];
+
+    $http.get('api/disciplinas.json').
+            success(function (data) {
+                disciplina.lista = data;
+            }).
+            error(function () {
+                disciplina.lista = [];
+            });
+
 });
 
 app.controller('MaterialController', function ($scope, $routeParams) {

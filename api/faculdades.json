@@ -1,14 +1,50 @@
 [
     {
-        "id":1,
-        "nome": "Faculdade OsmanLins"        
+        "id": 1,
+        "nome": "Faculdade OsmanLins",
+        "endereco": {
+            "logradouro": "Rua Jardim Betânia",
+            "numero": 153,
+            "bairro": "Livramento",
+            "cidade": {
+                "id": "3366",
+                "nome": "Vitória de Santo Antão",
+                "estado": "16"
+            },
+            "complemento":"",
+            "cep":"55602-380"
+        }
     },
     {
-        "id":2,
-        "nome": "Faculdade Barros Melo"        
+        "id": 2,
+        "nome": "Faculdade Barros Melo",
+        "endereco": {
+            "logradouro": "Rua Jardim Betânia",
+            "numero": 153,
+            "bairro": "Livramento",
+            "cidade": {
+                "id": "3366",
+                "nome": "Vitória de Santo Antão",
+                "estado": "16"
+            },
+            "complemento":"",
+            "cep":"55602-380"
+        }
     },
     {
-        "id":3,
-        "nome": "UFRPE"        
+        "id": 3,
+        "nome": "UFRPE",
+        "endereco": {
+            "logradouro": "Rua Jardim Betânia",
+            "numero": 153,
+            "bairro": "Livramento",
+            "cidade": {
+                "id": "3366",
+                "nome": "Vitória de Santo Antão",
+                "estado": "16"
+            },
+            "complemento":"",
+            "cep":"55602-380"
+        }
     }
 ]

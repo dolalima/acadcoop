@@ -9,16 +9,16 @@
                     </a></div>
                 <div class="panel-body" style="padding: 0px">
                     <div class="row">
-                        <div class="atividade col col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="atividade in atividade.lista">
+                        <div class="atividade col col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="atividade in atividade.lista" ng-click="$location.path('/atividade/cadastro/'+atividade.id);">
                             <div class="header">
                                 <div class="date">
-                                    <span class="day">15</span>
-                                    <span class="month">Maio</span>
+                                    <span class="day">{{atividade.dia}}</span>
+                                    <span class="month">{{atividade.mes}}</span>
                                 </div><div class="title">{{atividade.nome}}</div></div>  
                             <div class="body">
                                 <p>
                                     <strong>Disciplina:</strong> {{atividade.disciplina}}<br>
-                                    <strong>Professor:</strong> {{atividade.professor}}
+                                    <strong>Professor:</strong> {{atividade.professor}}<br>                                  
                                 </p>
                             </div>
                         </div>

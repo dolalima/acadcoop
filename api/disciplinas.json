@@ -1,11 +1,32 @@
 [
     {
         "id":1,
-        "name": "Projeto I",        
+        "nome": "Programação Orientada a Objeto",
+        "turma":"POO",        
         "professor": "Gustavo Lins",
         "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
         "disciplina":"Programação Web",
-        "dataEntrega" : "2015-04-15"
-        
+        "dataEntrega" : "2015-04-15",
+        "periodo":"2015-2"      
+    },    
+    {
+        "id":2,
+        "nome": "Estruturas de Dados",
+        "turma":"POO",        
+        "professor": "Gustavo Lins",
+        "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
+        "disciplina":"Programação Web",
+        "dataEntrega" : "2015-04-15",
+        "periodo":"2015-2"      
+    },    
+    {
+        "id":3,
+        "nome": "Administração",
+        "turma":"POO",        
+        "professor": "Gustavo Lins",
+        "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
+        "disciplina":"Programação Web",
+        "dataEntrega" : "2015-04-15",
+        "periodo":"2015-2"      
     }
 ]

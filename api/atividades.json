@@ -5,16 +5,49 @@
         "professor": "Gustavo Lins",
         "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
         "disciplina":"Programação Web",
-        "dataEntrega" : "2015-04-15"
+        "dataEntrega" : "2015-04-15",
+        "dia":15,
+        "mes":"MAI"
         
     },
     {
         "id":2,
-        "nome": "Projeto II",        
-        "professor": "Gustavo Lins",
-        "descricao":"Os alunos terão de que desenvolver uma pagina web que conte",
-        "disciplina":"Programação Web",
-        "dataEntrega" : "2015-04-15"
-        
+        "nome": "Robocode",        
+        "professor": "Cleyton Rodriques",
+        "descricao":"Codificar uma rodo para praticipar de uma batalha.",
+        "disciplina":"Inteligência Artificial",
+        "dataEntrega" : "2015-04-15",
+        "dia":25,
+        "mes":"AGO"        
+    },
+    {
+        "id":3,
+        "nome": "Robocode",        
+        "professor": "Cleyton Rodriques",
+        "descricao":"Codificar uma rodo para praticipar de uma batalha.",
+        "disciplina":"Inteligência Artificial",
+        "dataEntrega" : "2015-04-15",
+        "dia":25,
+        "mes":"AGO"        
+    },
+    {
+        "id":4,
+        "nome": "Robocode",        
+        "professor": "Cleyton Rodriques",
+        "descricao":"Codificar uma rodo para praticipar de uma batalha.",
+        "disciplina":"Inteligência Artificial",
+        "dataEntrega" : "2015-04-15",
+        "dia":25,
+        "mes":"AGO"        
+    },
+    {
+        "id":5,
+        "nome": "Robocode",        
+        "professor": "Cleyton Rodriques",
+        "descricao":"Codificar uma rodo para praticipar de uma batalha.",
+        "disciplina":"Inteligência Artificial",
+        "dataEntrega" : "2015-04-15",
+        "dia":25,
+        "mes":"AGO"        
     }
 ]

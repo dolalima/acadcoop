@@ -9,9 +9,10 @@ and open the template in the editor.
 */
 
 .atividade{
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 21px;
+    padding-right: 25px;
+    padding-bottom: 10px;
 }
 .atividade .header{
     background: linear-gradient(to bottom, rgb(60, 49, 160) , rgb(124, 124, 250));
